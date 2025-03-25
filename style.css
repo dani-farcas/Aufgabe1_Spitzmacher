@@ -1,78 +1,134 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f9;
-    background-color: #333;
+    background-image: url("https://www.myfunnydays.com/data/fm/ARTICLES%20-ACTUS/Nature/jardin%20lux.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: left;
     height: 100vh;
-    flex-wrap: wrap;
 }
 
 /* Typography */
-h2 {
+h1 {
     text-align: center;
-    color: #333;
+    color: hsl(231, 67%, 49%);
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-style: bold;
+    margin-bottom: 30px;
 }
 
 /* Container Layout */
 .container {
+    font-family: Poppins, sans-serif;
     display: flex;
-    width: 50%;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    flex-wrap: wrap; /* Asigură responsive fără media query */
-}
+    flex-direction: column;
+    width: 30vw;
+    height: 48vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+   
+    }
 
-/* Section styles */
-.left, .right {
-    flex: 1 1 48%;
+.eintrittspreis {
     padding: 20px;
-    background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    font-family: Poppins, sans-serif;
+    background-color: rgba(58, 106, 142, 0.28);
+    backdrop-filter: blur(3px);
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-left: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.89);
+    }
+
 
 /* Form elements */
-label, input {
+label {
     font-size: 1rem;
-    color: #555;
+    font-weight: bold;
+    color: hsl(160, 8%, 97%);
     display: block;
-    width: 100%;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
     margin-bottom: 15px;
 }
 
 input {
+    
     padding: 10px;
     border-radius: 4px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(6, 235, 86, 0.9);
     box-sizing: border-box;
+    text-align: center;
+    font-style: italic;
 }
 
-input[type="checkbox"] {
+input, [type="checkbox"] {
     width: auto;
-    margin-left: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(6, 235, 86, 0.8);
+    border: 2px solid rgba(6, 235, 86, 1);
+    background-color: rgba(6, 235, 86, 0.5);
+    cursor: pointer;
+    background-color: white;
+}
+input[type="checkbox"] {
+    appearance: none; 
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid rgba(6, 235, 86, 1);
+    background-color: white;
+    cursor: pointer;
+    position: relative; 
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgba(6, 235, 86, 0.8); 
+    border-color: green; 
+}
+input[type="checkbox"]:checked::after {
+    content: "✔"; 
+    font-size: 14px; 
+    color: green; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+}
+span {
+    font-size: 0.8rem;
+    color: #0d0d0d;
+    font-weight: bold;
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 /* Button styles */
 button {
+    all: unset; 
     background: #4CAF50;
     color: white;
     padding: 12px;
-    border: none;
     border-radius: 5px;
+    min-width: 100px;
+    text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: auto;
     font-size: 1rem;
     transition: background 0.3s;
+    display: block;
+    margin: 10px auto;
+    border: none;
 }
-
 button:hover {
     background: #45a049;
 }
@@ -82,11 +138,42 @@ button:hover {
     margin-top: 20px;
     padding: 10px;
     background: #e9ffe9;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     color: #4CAF50;
+    position: relative;
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+#result::after, #result::before {
+    content: "";
+    position: absolute;
+    height: calc(100% + 6px); 
+    width: calc(100% + 6px);  
+    background-image: conic-gradient(from var(--angle), transparent 70%, rgb(161, 227, 56) 0);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 4px;
+    animation: spin 20s linear infinite;
+}
+#result::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 3600deg;
+    }
 }
 
 /* Responsive Design */
@@ -98,6 +185,9 @@ button:hover {
         flex: 1 1 100%;
     }
     button {
-        font-size: 1,1rem;
+        font-size: 1rem;
+    }
+    #result {
+        font-size: 0.8rem;
     }
 }

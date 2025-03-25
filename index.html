@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<script src="script.js"></script>
 
 <body>
     <div class="container">
-        <div class="left">
-            <h2>Berechnung Eintrittspreis</h2>
+        <div class="eintrittspreis">
+            <h1>Berechnung Eintrittspreis</h1>
 
         <form>
+            <label for="geburtsjahr">Geburtsjahr:</label>
+            <input type="number" id="geburtsjahr" name="geburtsjahr" required placeholder="Geburtsjahr eingeben"><br>
+            <button type="button" onclick="berechneAlter()">Berechnen</button><br>
+
             <label for="alter">Alter:</label>
             <input type="number" id="alter" name="alter" required placeholder="Bitte Alter eingeben"><br>
 
@@ -30,7 +33,7 @@
 
         <!-- Richt Section - Komplexe Notenberechnung-->
 
-
+<!--
         <div class="right">
             <h2>Komplexe Notenberechnung</h2>
 
@@ -44,6 +47,8 @@
                 <button type="submit">Notenberechnung</button>
             </form>
         </div>
-    </div>
+    </div>-->
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 

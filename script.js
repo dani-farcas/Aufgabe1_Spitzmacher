@@ -19,6 +19,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });     
 
+function berechneAlter() {
+    const geburtsjahr = document.getElementById("geburtsjahr").value;
+    const aktuellesJahr = new Date().getFullYear();
+    const alterInput = document.getElementById("alter");
+
+    if (geburtsjahr && geburtsjahr > 1900 && geburtsjahr <= aktuellesJahr) {
+        alterInput.value = aktuellesJahr - geburtsjahr;
+    } else {
+        alert("Bitte ein gültiges Geburtsjahr eingeben.");
+    }
+};
 
 function berechneEintrittspreis() {
     const alter = parseInt(document.getElementById("alter").value);
