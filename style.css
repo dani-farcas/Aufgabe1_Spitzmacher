@@ -14,7 +14,7 @@ body {
 /* Typography */
 h1 {
     text-align: center;
-    color: hsl(231, 67%, 49%);
+    color: hsl(0, 89%, 25%);
     font-size: 1.5rem;
     font-style: bold;
     margin-bottom: 30px;
@@ -25,7 +25,7 @@ h1 {
     font-family: Poppins, sans-serif;
     display: flex;
     flex-direction: column;
-    width: 30vw;
+    width: 48vw;
     height: 48vh;
     justify-content: center;
     align-items: center;
@@ -155,7 +155,7 @@ button:hover {
     position: absolute;
     height: calc(100% + 6px); 
     width: calc(100% + 6px);  
-    background-image: conic-gradient(from var(--angle), transparent 70%, rgb(161, 227, 56) 0);
+    background-image: conic-gradient(from var(--angle), transparent 80%, rgb(50, 224, 67) 0);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
