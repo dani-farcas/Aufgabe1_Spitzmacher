@@ -14,9 +14,10 @@ body {
 /* Typography */
 h1 {
     text-align: center;
-    color: hsl(0, 89%, 25%);
+    color: white;
+    font-weight: bolder;
     font-size: 1.5rem;
-    font-style: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.89);
     margin-bottom: 30px;
 }
 
@@ -24,9 +25,8 @@ h1 {
 .container {
     font-family: Poppins, sans-serif;
     display: flex;
-    flex-direction: column;
-    width: 48vw;
-    height: 48vh;
+    width: 50%;
+    height: 50%;
     justify-content: center;
     align-items: center;
     margin-top: 20vh;
@@ -37,11 +37,11 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     font-family: Poppins, sans-serif;
-    background-color: rgba(58, 106, 142, 0.28);
-    backdrop-filter: blur(3px);
-    border-top: 1px solid rgba(255, 255, 255, 0.8);
-    border-left: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.89);
+    background-color: rgba(58, 106, 142, 0.1);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     }
 
 
@@ -55,6 +55,8 @@ label {
     width: auto;
     text-align: center;
     margin-bottom: 15px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+    margin-bottom: 30px;
 }
 
 input {
@@ -104,7 +106,9 @@ input[type="checkbox"]:checked::after {
 }
 span {
     font-size: 0.8rem;
-    color: #0d0d0d;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+    margin-bottom: 30px;
     font-weight: bold;
     width: fit-content;
     display: block;
@@ -153,15 +157,15 @@ button:hover {
 #result::after, #result::before {
     content: "";
     position: absolute;
-    height: calc(100% + 6px); 
-    width: calc(100% + 6px);  
-    background-image: conic-gradient(from var(--angle), transparent 80%, rgb(50, 224, 67) 0);
+    height: calc(100% + 10px); 
+    width: calc(100% + 10px);  
+    background-image: conic-gradient(from var(--angle), transparent 70%, rgb(42, 250, 122) );
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
-    border-radius: 4px;
-    animation: spin 20s linear infinite;
+    border-radius: 10px;
+    animation: spin 3s linear infinite;
 }
 #result::before {
     filter: blur(1.5rem);
@@ -172,7 +176,7 @@ button:hover {
         --angle: 0deg;
     }
     to {
-        --angle: 3600deg;
+        --angle: 360deg;
     }
 }
 
@@ -181,9 +185,7 @@ button:hover {
     .container {
         flex-wrap: wrap;
     }
-    .left .right {
-        flex: 1 1 100%;
-    }
+    h1 {font-size: 1rem;
     button {
         font-size: 1rem;
     }
